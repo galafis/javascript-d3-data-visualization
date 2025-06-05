@@ -1,0 +1,293 @@
+/* Chart-specific styles */
+
+/* SVG base styles */
+svg {
+  font-family: var(--font-family);
+  overflow: visible;
+}
+
+/* Axes */
+.axis path,
+.axis line {
+  stroke: var(--border-color);
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: var(--text-color);
+  font-size: 12px;
+}
+
+.axis-title {
+  font-size: 14px;
+  font-weight: 500;
+  fill: var(--text-color);
+}
+
+/* Grid lines */
+.grid line {
+  stroke: var(--border-color);
+  stroke-opacity: 0.2;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+/* Tooltips */
+.tooltip {
+  position: absolute;
+  padding: 10px;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  pointer-events: none;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.tooltip-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.tooltip-value {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltip-label {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+/* Bar charts */
+.bar {
+  fill: var(--primary-color);
+  transition: fill 0.3s;
+}
+
+.bar:hover {
+  fill: var(--secondary-color);
+}
+
+/* Line charts */
+.line {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 2;
+}
+
+.line-point {
+  fill: var(--primary-color);
+  stroke: white;
+  stroke-width: 1;
+}
+
+.area {
+  fill: var(--primary-color);
+  opacity: 0.2;
+}
+
+/* Scatter plots */
+.scatter-point {
+  fill: var(--primary-color);
+  stroke: white;
+  stroke-width: 1;
+  transition: r 0.3s;
+}
+
+.scatter-point:hover {
+  r: 8;
+}
+
+/* Pie charts */
+.pie-slice {
+  transition: opacity 0.3s;
+}
+
+.pie-slice:hover {
+  opacity: 0.8;
+}
+
+.pie-label {
+  font-size: 12px;
+  text-anchor: middle;
+  fill: white;
+  pointer-events: none;
+}
+
+/* Heatmaps */
+.heatmap-cell {
+  stroke: white;
+  stroke-width: 1;
+  transition: opacity 0.3s;
+}
+
+.heatmap-cell:hover {
+  opacity: 0.8;
+}
+
+/* Geographic maps */
+.country {
+  stroke: white;
+  stroke-width: 0.5;
+  transition: opacity 0.3s;
+}
+
+.country:hover {
+  opacity: 0.8;
+}
+
+/* Legends */
+.legend-item {
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.legend-item.inactive {
+  opacity: 0.5;
+}
+
+/* Annotations */
+.annotation path {
+  stroke: var(--text-color);
+  stroke-width: 1;
+  fill: none;
+}
+
+.annotation-note-title {
+  font-weight: bold;
+  font-size: 13px;
+  fill: var(--text-color);
+}
+
+.annotation-note-label {
+  font-size: 12px;
+  fill: var(--text-color);
+}
+
+/* Brushes */
+.brush .selection {
+  fill: var(--primary-color);
+  fill-opacity: 0.2;
+  stroke: var(--primary-color);
+}
+
+/* Transitions */
+.chart-transition {
+  transition: all 0.5s ease;
+}
+
+/* WebGL specific */
+canvas {
+  border-radius: 4px;
+}
+
+/* Real-time charts */
+.realtime-line {
+  stroke: var(--accent-color);
+  stroke-width: 2;
+  fill: none;
+}
+
+.realtime-area {
+  fill: var(--accent-color);
+  opacity: 0.1;
+}
+
+/* Responsive chart containers */
+.responsive-chart-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Loading state */
+.chart-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.chart-loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error state */
+.chart-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.chart-error-icon {
+  color: var(--danger-color);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.chart-error-message {
+  color: var(--danger-color);
+  font-weight: 500;
+}
+
+/* No data state */
+.chart-no-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.chart-no-data-icon {
+  color: var(--warning-color);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.chart-no-data-message {
+  color: var(--text-color);
+  font-weight: 500;
+}
+

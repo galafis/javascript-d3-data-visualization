@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3 Data Visualization Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Advanced data visualization platform built with D3.js">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>D3 Data Visualization Platform</h1>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="basic">Basic Charts</a></li>
+          <li><a href="#" data-section="advanced">Advanced Charts</a></li>
+          <li><a href="#" data-section="realtime">Real-time Data</a></li>
+          <li><a href="#" data-section="geographic">Geographic</a></li>
+          <li><a href="#" data-section="3d">3D Visualizations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="dashboard-controls">
+        <div class="control-panel">
+          <div class="control-group">
+            <label for="dataset-select">Dataset:</label>
+            <select id="dataset-select">
+              <option value="sales">Sales Data</option>
+              <option value="geographic">Geographic Data</option>
+              <option value="timeseries">Time Series</option>
+              <option value="multivariate">Multivariate Data</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="chart-type">Chart Type:</label>
+            <select id="chart-type">
+              <option value="bar">Bar Chart</option>
+              <option value="line">Line Chart</option>
+              <option value="scatter">Scatter Plot</option>
+              <option value="pie">Pie Chart</option>
+              <option value="heatmap">Heatmap</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <button id="update-btn" class="btn primary">Update Chart</button>
+            <button id="export-btn" class="btn secondary">Export</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="visualization-container">
+        <div class="chart-container">
+          <div id="chart-area"></div>
+          <div id="chart-legend"></div>
+        </div>
+        <div class="data-details">
+          <h3>Data Insights</h3>
+          <div id="data-statistics"></div>
+        </div>
+      </section>
+
+      <section id="advanced-features" class="hidden">
+        <h2>Advanced Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Real-time Data</h3>
+            <div id="realtime-chart"></div>
+            <button class="btn secondary" id="toggle-stream">Start Stream</button>
+          </div>
+          <div class="feature-card">
+            <h3>Geographic Visualization</h3>
+            <div id="geo-chart"></div>
+          </div>
+          <div class="feature-card">
+            <h3>3D Visualization</h3>
+            <div id="webgl-chart"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Gabriel Demetrios Lafis | <a href="https://github.com/galafis/javascript-d3-data-visualization">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+
