@@ -5,8 +5,7 @@
  * @author Gabriel Demetrios Lafis
  * @version 2.1.0
  */
-
-export class BaseChart {
+export default class BaseChart {
   /**
    * Create a new BaseChart instance
    * 
@@ -235,4 +234,3 @@ export class BaseChart {
     // To be implemented by subclasses if needed
   }
 }
-
